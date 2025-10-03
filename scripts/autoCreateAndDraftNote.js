@@ -563,6 +563,11 @@ import { runWithCore } from '@aa-0921/note-auto-core';
       '💖',
     ];
 
+    // Audible・Kindleアフィリエイト設定（無効化）
+    const affiliateTag = ''; // 空文字列で無効化
+    const audibleAffiliateEnabled = false;
+    const kindleAffiliateEnabled = false;
+
     // ----------------------------------------------------------------------------------
     // 記事内に挿入するアフィリエイト文（参考実装の体裁を反映）
     // const affiliateLink = [
@@ -600,6 +605,10 @@ import { runWithCore } from '@aa-0921/note-auto-core';
       affiliateLinks,
       magazinePromotion,
       amazonAssociateText,
+      // Audible・Kindleアフィリエイト設定
+      affiliateTag,
+      audibleAffiliateEnabled,
+      kindleAffiliateEnabled,
     });
     console.log('記事の自動生成と下書き保存が完了しました');
   });
