@@ -37,7 +37,7 @@ async function main() {
     await service.postRandomTweet(posts, { 
       dryrun: isDryrun,
       // 話題のハッシュタグを追加するか（文字数上限までギリギリ追加）
-      includeTrending: false
+      includeTrending: true
     });
 
 
