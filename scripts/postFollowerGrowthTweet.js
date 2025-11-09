@@ -33,7 +33,13 @@ async function main() {
       baseDir: __dirname
     });
 
-    await service.postRandomTweet(posts, { dryrun: isDryrun });
+    // await service.postRandomTweet(posts, { dryrun: isDryrun });
+    await service.postRandomTweet(posts, { 
+      dryrun: isDryrun,
+      // 話題のハッシュタグを追加するか（文字数上限までギリギリ追加）
+      includeTrending: false
+    });
+
 
   } catch (error) {
     logger.error('❌ エラーが発生しました');
