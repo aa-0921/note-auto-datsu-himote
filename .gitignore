@@ -1,3 +1,4 @@
 node_modules/
 .env 
 .cursor/rules/
+note-auto-core/
