@@ -13,6 +13,8 @@ on:
         description: 'DRYRUNモード（実際には投稿しない）'
         required: false
         default: 'false'
+        type: boolean
+
 jobs:
   post:
     runs-on: ubuntu-latest
@@ -64,16 +66,4 @@ jobs:
           TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
         run: |
           node scripts/postFollowerGrowthTweet.js
-
-      - name: Commit post history
-        if: ${{ github.event.inputs.dryrun != 'true' }}
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          if [ -f data/post-history.json ]; then
-            git add data/post-history.json
-            git diff --quiet && git diff --staged --quiet || (git commit -m "chore: 投稿履歴を更新" && git push)
-          else
-            echo "data/post-history.json が見つかりません。スキップします。"
-          fi
 

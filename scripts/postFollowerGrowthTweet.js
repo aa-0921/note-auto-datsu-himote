@@ -14,7 +14,6 @@ const __dirname = path.dirname(__filename);
 const logger = new Logger();
 const args = process.argv.slice(2);
 const isDryrun = args.includes('--dryrun');
-const HISTORY_FILE = path.join(__dirname, '../data/post-history.json');
 
 async function main() {
   try {
@@ -29,7 +28,6 @@ async function main() {
     }
 
     const service = new RandomPostService(logger, {
-      historyFile: HISTORY_FILE,
       baseDir: __dirname
     });
 
