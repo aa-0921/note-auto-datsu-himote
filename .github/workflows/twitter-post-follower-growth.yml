@@ -1,0 +1,75 @@
+name: Twitter Post Follower Growth
+
+on:
+  schedule:
+  #   # 3時間おきに実行（UTCベース）。JST(+9)では毎日 09:00,12:00,15:00,18:00,21:00,24:00,03:00,06:00 に相当
+  #   - cron: '0 */3 * * *'
+  # ーーーーーーーーー
+    - cron: '0 21,22,23 * * *'              # JST 06:00/07:00/08:00（UTC 21:00/22:00/23:00）
+    - cron: '0 0,1,2,3,4,5,6,7,8,9,10,11,12 * * *' # JST 09:00-21:00（UTC 00:00-12:00）
+  workflow_dispatch:
+    inputs:
+      dryrun:
+        description: 'DRYRUNモード（実際には投稿しない）'
+        required: false
+        default: 'false'
+jobs:
+  post:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Checkout note-auto-core
+        uses: actions/checkout@v4
+        with:
+          repository: aa-0921/note-auto-core
+          path: note-auto-core
+          ref: main
+          token: ${{ secrets.CORE_REPO_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          # note-auto-coreの依存関係をインストール
+          cd note-auto-core && npm install
+          cd ..
+          # ローカルパッケージを直接参照してインストール
+          npm install ./note-auto-core
+
+      - name: Run script (dryrun)
+        if: ${{ github.event.inputs.dryrun == 'true' }}
+        env:
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+          TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
+        run: |
+          node scripts/postFollowerGrowthTweet.js --dryrun
+
+      - name: Run script (production)
+        if: ${{ github.event.inputs.dryrun != 'true' }}
+        env:
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+          TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
+        run: |
+          node scripts/postFollowerGrowthTweet.js
+
+      - name: Commit post history
+        if: ${{ github.event.inputs.dryrun != 'true' }}
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data/post-history.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: 投稿履歴を更新" && git push)
+
