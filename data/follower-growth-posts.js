@@ -168,12 +168,12 @@ export const posts = [
   },
   {
     title: '',
-    text: `そんなに見られたらはずかしい。でもわたしかわいいてしょ💕
+    text: `そんなに見られたらはずかしい。でもわたしかわいいでしょ💕
 
 あんたに見られて恥ずかしかばい✨
 
 でも、かわいかって言ってくれてありがとう🌙`,
-    image: 'images/follower-growth/そんなに見られたらはずかしい。でも私かわいいてしょ.png'
+    image: 'images/follower-growth/そんなに見られたらはずかしい。でも私かわいいでしょ.png'
   },
   {
     title: '',
@@ -231,12 +231,12 @@ export const posts = [
   },
   {
     title: '',
-    text: `わたしかわいいてしょ？💕
+    text: `わたしかわいいでしょ？💕
 
 あんたに見られて嬉しかたい✨
 
 もっとかわいかって言ってくれてよかと🌙`,
-    image: 'images/follower-growth/私かわいいてしょ.png'
+    image: 'images/follower-growth/私かわいいでしょ.png'
   },
   {
     title: '',
