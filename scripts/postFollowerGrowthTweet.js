@@ -10,6 +10,8 @@ import { posts } from '../data/follower-growth-posts.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+// プロジェクトルートを取得（scripts/の親ディレクトリ）
+const projectRoot = path.resolve(__dirname, '..');
 
 const logger = new Logger();
 const args = process.argv.slice(2);
@@ -28,14 +30,14 @@ async function main() {
     }
 
     const service = new RandomPostService(logger, {
-      baseDir: __dirname
+      baseDir: projectRoot
     });
 
     // await service.postRandomTweet(posts, { dryrun: isDryrun });
     await service.postRandomTweet(posts, { 
       dryrun: isDryrun,
       // 話題のハッシュタグを追加するか（文字数上限までギリギリ追加）
-      includeTrending: true
+      // includeTrending: true
     });
 
 
