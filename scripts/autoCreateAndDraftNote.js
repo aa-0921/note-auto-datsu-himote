@@ -466,6 +466,17 @@ import { runWithCore } from '@aa-0921/note-auto-core';
     // アソシエイト表記文（空文字）
     const amazonAssociateText = '';
 
+    // おすすめ記事セクションの設定
+    const recommendedArticlesTitle = '他のおすすめ記事㊙️';
+    const recommendedArticlesUrls = [
+      'https://note.com/datsu_himote/n/n98d8b0d59743',
+      'https://note.com/datsu_himote/n/n975437e00407',
+      'https://note.com/datsu_himote/n/nc061c0cf0978',
+      'https://note.com/datsu_himote/n/nc688082e901f',
+      'https://note.com/datsu_himote/n/n773f5dcb8d2d',
+      'https://note.com/datsu_himote/n/n8c6fd09a3664',
+    ];
+
     // 記事の自動生成と下書き保存機能を実行
     await core.runAutoCreateAndDraftNote({
       background: wantsBackground,
@@ -484,6 +495,9 @@ import { runWithCore } from '@aa-0921/note-auto-core';
       affiliateTag,
       audibleAffiliateEnabled,
       kindleAffiliateEnabled,
+      // おすすめ記事セクション設定
+      recommendedArticlesTitle,
+      recommendedArticlesUrls,
     });
     console.log('記事の自動生成と下書き保存が完了しました');
   });
