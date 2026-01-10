@@ -26,6 +26,82 @@
 
 
 export const posts = [
+  {
+    title: '最後の表情が・・・・・・',
+    text: `#sora2 #sora #癒やし #動画`,
+    // image: 'images/follower-growth/anua-serum.jpg'
+    movie: 'movies/follower-growth/20260108_0954_01kedhe1p7frvs62a53k30my92.mp4'
+  },
+  {
+    title: '最後の表情が・・・・・・',
+    text: `#sora2 #sora #癒やし #動画`,
+    movie: 'movies/follower-growth/20260110_0259_01keg11n0tefasceqzqtf1s4x4.mp4'
+  },
+  {
+    title: '最後の表情が・・・・・・',
+    text: `#sora2 #sora #癒やし #動画`,
+    movie: 'movies/follower-growth/20260110_0259_01kehngjkef1gspv8j8jkq1y3n.mp4'
+  },
+  {
+    title: '最後の表情が・・・・・・',
+    text: `#sora2 #sora #癒やし #動画`,
+    movie: 'movies/follower-growth/20260110_0259_01kehp6ty5fngsywbmmav2c7tg.mp4'
+  },
+  {
+    title: '最後の表情が・・・・・・',
+    text: `#sora2 #sora #癒やし #動画`,
+    movie: 'movies/follower-growth/20260110_0259_01kehra715eazv637tq9f1kmjh.mp4'
+  },
+  {
+    title: '最後の表情が・・・・・・',
+    text: `#sora2 #sora #癒やし #動画`,
+    movie: 'movies/follower-growth/20260110_0259_01kehrn7j3f0y81cc5fevh2b0j.mp4'
+  },
+  {
+    title: '最後の表情が・・・・・・',
+    text: `#sora2 #sora #癒やし #動画`,
+    movie: 'movies/follower-growth/20260110_0259_01kehrvzk4esf9vty76a2da2m5.mp4'
+  },
+  {
+    title: '最後の表情が・・・・・・',
+    text: `#sora2 #sora #癒やし #動画`,
+    movie: 'movies/follower-growth/20260110_0300_01kef5x8kber5ry2p5wdf0yvng.mp4'
+  },
+  {
+    title: '最後の表情が・・・・・・',
+    text: `#sora2 #sora #癒やし #動画`,
+    movie: 'movies/follower-growth/20260110_0300_01kef61yh9e869hzkhm5m3x7rz.mp4'
+  },
+  {
+    title: '最後の表情が・・・・・・',
+    text: `#sora2 #sora #癒やし #動画`,
+    movie: 'movies/follower-growth/20260110_0300_01keg0ktvcfk4s6ykqrr6shfzy.mp4'
+  },
+  {
+    title: '最後の表情が・・・・・・',
+    text: `#sora2 #sora #癒やし #動画`,
+    movie: 'movies/follower-growth/20260110_0300_01keg0yjjrf919a475ec3yben9.mp4'
+  },
+  {
+    title: '最後の表情が・・・・・・',
+    text: `#sora2 #sora #癒やし #動画`,
+    movie: 'movies/follower-growth/20260110_0301_01keg11axeej3s81dpdkd9jp30.mp4'
+  },
+  {
+    title: '最後の表情が・・・・・・',
+    text: `#sora2 #sora #癒やし #動画`,
+    movie: 'movies/follower-growth/20260110_0301_01kegp3040e73tz7sz52swkd60.mp4'
+  },
+  {
+    title: '最後の表情が・・・・・・',
+    text: `#sora2 #sora #癒やし #動画`,
+    movie: 'movies/follower-growth/20260110_0301_01kehnhwmwew4vp1tqsmt8cws1.mp4'
+  },
+  {
+    title: '最後の表情が・・・・・・',
+    text: `#sora2 #sora #癒やし #動画`,
+    movie: 'movies/follower-growth/20260110_0301_01kehp7kc8ftrvsrgjbv09kyaa.mp4'
+  },
 
 // 非モテのnote のリンクー凍結になったーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 //  {
