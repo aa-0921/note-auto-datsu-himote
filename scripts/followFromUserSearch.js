@@ -6,10 +6,21 @@ import { runWithCore } from '@aa-0921/note-auto-core';
 (async () => {
   await runWithCore(async ({ core, wantsBackground }) => {
     // アカウント固有の検索ワード配列（ここで管理）
-    const searchWords = [
+    const baseSearchWords = [
       'フォロバ',
-      // 'フォロバ100',
+      'フォロバ100',
+      '相互',
+      'フォローバック',
     ];
+
+    const workTroubleSearchWords = [
+    ];
+
+    const otherSearchWords = [
+    ];
+
+    // すべてのリストを結合
+    const searchWords = [...baseSearchWords, ...workTroubleSearchWords, ...otherSearchWords];
 
     await core.runFollowFromUserSearch({
       background: wantsBackground,
