@@ -477,11 +477,16 @@ import { runWithCore } from '@aa-0921/note-auto-core';
       'https://note.com/datsu_himote/n/n8c6fd09a3664',
     ];
 
+    // 記事の最初と最後に追加するコメント募集テキスト
+    const commentRequestText =
+      'コメントをいただけると、とても励みになります💪 非モテや恋愛に関するお悩み、取り上げてほしいテーマなどがあれば、どのような内容でもお気軽にお寄せください🔥';
+
     // 記事の自動生成と下書き保存機能を実行
     await core.runAutoCreateAndDraftNote({
       background: wantsBackground,
       topics,
       patterns,
+      commentRequestText,
       systemMessage,
       articleConditionsLines,
       rewriteConditionsLines,
