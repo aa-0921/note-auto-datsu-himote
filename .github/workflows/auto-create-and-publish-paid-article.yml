@@ -4,8 +4,8 @@
 name: Auto Create And Publish Paid Article
 
 on:
-  # schedule:
-  # # 2026/01/06 投稿一件あたりのスキを増やす為に回数を減らす
+  schedule:
+    # 2026/01/06 投稿一件あたりのスキを増やす為に回数を減らす
 
     # JST 6:00〜24:00の間で1日8回実行（2時間15分間隔）
     # - cron: '0 21 * * *'   # JST 06:00
