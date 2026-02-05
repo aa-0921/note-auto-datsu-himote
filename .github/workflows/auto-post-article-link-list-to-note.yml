@@ -4,9 +4,11 @@ on:
   schedule:
     # 毎日10:30, 12:30, 19:30（JST）に実行
     # JST = UTC + 9時間
-    - cron: '30 5 * * *'   # JST 14:30 = UTC 5:30
-    - cron: '30 7 * * *'   # JST 16:30 = UTC 7:30
-    - cron: '30 12 * * *'  # JST 21:30 = UTC 12:30
+
+    # このアカウントでは一旦停止
+    # - cron: '30 5 * * *'   # JST 14:30 = UTC 5:30
+    # - cron: '30 7 * * *'   # JST 16:30 = UTC 7:30
+    # - cron: '30 12 * * *'  # JST 21:30 = UTC 12:30
   workflow_dispatch:
 
 jobs:
